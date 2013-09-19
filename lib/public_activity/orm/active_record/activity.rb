@@ -7,11 +7,11 @@ module PublicActivity
         include Renderable
 
         # Define polymorphic association to the parent
-        belongs_to :trackable, :polymorphic => true
+        belongs_to :trackable, :polymorphic => true, :touch => true
         # Define ownership to a resource responsible for this activity
-        belongs_to :owner, :polymorphic => true
+        belongs_to :owner, :polymorphic => true, :touch => true
         # Define ownership to a resource targeted by this activity
-        belongs_to :recipient, :polymorphic => true
+        belongs_to :recipient, :polymorphic => true, :touch => true
         # Serialize parameters Hash
         serialize :parameters, Hash
 
